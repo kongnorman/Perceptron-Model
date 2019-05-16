@@ -62,14 +62,6 @@ public class Perceptron {
 	// Modifier.
 	public void train(double[] input, double[] real, int iterations, double lr, int index) {
 
-		// mean
-		double[] averages = new double[4];
-
-		averages[0] = 0;
-		averages[1] = 0;
-		averages[2] = 0;
-		averages[3] = 0; 
-
 		for (int i=0; i<iterations; i++) {
 
 			// Feed-forward.
