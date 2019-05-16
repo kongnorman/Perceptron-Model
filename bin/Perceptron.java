@@ -102,7 +102,6 @@ public class Perceptron {
 
 		} // End iterations loop
 
-
 	} // End train method
 
 } // End class
