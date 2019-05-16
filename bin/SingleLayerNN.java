@@ -56,7 +56,7 @@ public class SingleLayerNN {
 
 		// Test results
 		System.out.println();
-		//System.out.println("results: ");
+		System.out.println("results: ");
 
 		for (double[] set : testset) {
 			neuron.setInput(set);
