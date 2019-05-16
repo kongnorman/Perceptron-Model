@@ -20,27 +20,40 @@ public class SingleLayerNN {
 							{1, 1, 0, 0},
 							{1, 0, 1, 0} };
 
-		double learningr = 15;
-		int its = 10000;
+		double learningr = 10;
+		int its = 1000;
 
 		// Create perceptron object
 		Perceptron neuron = new Perceptron(trainset[0]);
 
-		//System.out.println("weights initial");
-		//for (double weight : neuron.getWeights()) {
-		//	System.out.println(weight);
-		//}
+		// Print initial weights
+		System.out.println("weights initial");
+		for (double weight : neuron.getWeights()) {
+			System.out.println(weight);
+		}
 
-		// Training
+		// Training over all training sets (1)
 		for (int i=0; i<trainset.length; i++) {
 			neuron.setInput(trainset[i]);
 			neuron.train(trainset[i], trainlabels, its, learningr, i);
 		}
 
-		//System.out.println("weights final");
-		//for (double weight : neuron.getWeights()) {
-		//	System.out.println(weight);
-		//}
+		// Training over all training sets (2)
+		for (int i=0; i<trainset.length; i++) {
+			neuron.setInput(trainset[i]);
+			neuron.train(trainset[i], trainlabels, its, learningr, i);
+		}
+
+		// Training over all training sets (3)
+		for (int i=0; i<trainset.length; i++) {
+			neuron.setInput(trainset[i]);
+			neuron.train(trainset[i], trainlabels, its, learningr, i);
+		}
+
+		System.out.println("weights final");
+		for (double weight : neuron.getWeights()) {
+			System.out.println(weight);
+		}
 
 		// Test results
 		System.out.println();
@@ -48,11 +61,8 @@ public class SingleLayerNN {
 
 		for (double[] set : testset) {
 			neuron.setInput(set);
-			System.out.println(neuron.sig(neuron.z(neuron.getWeights(), neuron.getInput())));
-			if (neuron.sig(neuron.z(neuron.getWeights(), neuron.getInput())) < 0.5)
-				System.out.println("prediction:  0");
-			else
-				System.out.println("prediction: 1");
+			//System.out.println(neuron.sig(neuron.z(neuron.getInput(), neuron.getWeights())));
+			System.out.println(neuron.getPrediction());
 		}
 
 	} // End main

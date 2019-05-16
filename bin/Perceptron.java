@@ -2,8 +2,9 @@ public class Perceptron {
 
 	// Fields.
 	double[] input;
-	double activation;
+	double prediction;
 	double[] weights = new double[4];
+	double[] gdescent = new double[4];
 
 	// Constructor.
 	public Perceptron(double[] input) {
@@ -26,6 +27,16 @@ public class Perceptron {
 	public void setInput(double[] arr) {
 		input = arr;
 	} // End setInput() method
+
+	// Getter: prediction.
+	public double getPrediction() {
+		double[] w = getWeights();
+		double[] a = getInput();
+		if (sig(z(w, a)) < 0.5)
+			return 0.;
+		else
+			return 1.;
+	} // end getPrediction method
 
 	// dot product
 	public double z(double[] x, double[] y) {
@@ -51,31 +62,21 @@ public class Perceptron {
 	// Modifier.
 	public void train(double[] input, double[] real, int iterations, double lr, int index) {
 
-		double[] gdescent = new double[4];
-
-		// mean
-		double[] averages = new double[4];
-
-		averages[0] = 0;
-		averages[1] = 0;
-		averages[2] = 0;
-		averages[3] = 0; 
-
 		for (int i=0; i<iterations; i++) {
 
 			// Feed-forward.
 			double z = z(input, weights);
-			double prediction = sig(z);
+			double pred = sig(z);
 
 			// Back propogation.
-			double cost = Math.pow((prediction - real[index]), 2);
+			double cost = Math.pow((pred - real[index]), 2);
+			double costPrime = 2*(pred - real[index]);
 
 			// Print cost
-			if(i % 1000 == 0)
-				System.out.println(cost);
+			//if(i % 1000 == 0)
+			//	System.out.println(cost);
 
 			// first feature
-			double costPrime = 2*(prediction - real[index]);
 			gdescent[0] = input[0] * sigPrime(z(input, weights)) * costPrime;
 
 			// second feature
@@ -87,20 +88,11 @@ public class Perceptron {
 			// fourth feature
 			gdescent[3] = input[3] * sigPrime(z(input, weights)) * costPrime;
 
-			for (int j=0; j<averages.length; j++) {
-				averages[j] += gdescent[j];
+			for (int n=0; n<weights.length; n++) {
+				weights[n] -= gdescent[n]*lr;
 			}
 
 		} // End iterations loop
-
-			// final step for averages: divide
-			for (int k=0; k<averages.length; k++) {
-					averages[k] /= iterations;
-				}
-
-			for (int n=0; n<weights.length; n++) {
-				weights[n] -= averages[n]*lr;
-			}
 
 	} // End train method
 
