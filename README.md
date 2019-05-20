@@ -1,12 +1,8 @@
-# Term Project Sample Repository
+# Term Project: Single Layer FeedForward Neural Networks
 
-Use this repository to structure your term project submission.
-
-There are three folders:
- - *bin*: where you put your code
- - *data*: where you put any data that you generate, or that your code relies on for validation of your results
- - *report*: where you put files related to your final report
-
- Each folder has its own README.md, where you can include extra documentation for the reader.
+There are three folders in this repository:
+ - *bin*: Contains the source code. 
+ - *data*: Contains all data related to this study.
+ - *report*: Contains the formal report. 
 
  

@@ -1,3 +1,28 @@
 # Code
 
-Place the code you developped for the term project in this folder. Add any instructions/documentation required to run the code, and what results can be expected in this *README* file.
+When the code is run (on MacOS), one can expect to see this within Terminal:
+
+```shell
+weights initial
+0.6892376379888118
+0.4401111607874939
+0.20863093024298285
+0.759610794002749
+weights final
+13.3980968625279
+-0.8914396661112656
+-3.9462489866545334
+-2.572289927169455
+
+results: 
+0.0
+0.0
+0.0
+1.0
+1.0
+1.0
+1.0
+```
+
+Note that several lines of code are commented out and if one wishes to see more information, it is easy to uncomment them out if they wish to view information like the value of the cost function, the value of the sigmoid function, etc. 
+

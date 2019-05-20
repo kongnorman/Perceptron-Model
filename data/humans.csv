@@ -1,0 +1,36 @@
+﻿,Program,Score (on 7),Score (%),Incorrect Answers
+lucas,Non-Science,7,100,
+david,Non-Science,5,71.42857143,"0,0,0,1,0,0,1"
+alex t.,Non-Science,7,100,
+elia,Non-Science,7,100,
+rona,Non-Science,7,100,
+katya,Non-Science,4,57.14285714,"0,0,0,0,0,0,1"
+naomi,Non-Science,7,100,
+tea,Non-Science,7,100,
+emily b.,Non-Science,7,100,
+mike,Non-Science,7,100,
+katy,Non-Science,7,100,
+adam,Non-Science,7,100,
+charles,Non-Science,3,42.85714286,"0,0,0,0,0,0,0"
+eduardo,Non-Science,7,100,
+eden (katy's friend),Non-Science,7,100,
+josh,Science,7,100,
+arthur,Science,7,100,
+alex o.,Science,7,100,
+eric,Science,7,100,
+ben m.,Science,7,100,
+brendan,Science,7,100,
+cass,Science,7,100,
+oliver,Science,6,85.71428571,"0,0,0,1,0,1,1"
+jonathan,Science,7,100,
+jia,Science,3,42.85714286,"0,0,0,0,0,0,0"
+marc,Science,7,100,
+emily g.,Science,7,100,
+alex n.,Science,4,57.14285714,"0,0,1,1,0,1,0"
+hayley,Science,7,100,
+aren,Science,7,100,
+,,,,
+,,science,nonscience,total
+number,,15,15,30
+Standard deviation (%),,17.79922581,18.54786574,17.8678129
+average score,,92.38095238,91.42857143,91.9047619
