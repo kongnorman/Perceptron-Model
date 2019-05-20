@@ -1,6 +1,6 @@
 # Code
 
-When the code is run (on MacOS), one can expect to see output of the same format within Terminal:
+When the code is run, one can expect to see output like this within Terminal (MacOS):
 
 ```shell
 weights initial
