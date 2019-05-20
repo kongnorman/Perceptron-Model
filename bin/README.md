@@ -1,6 +1,6 @@
 # Code
 
-When the code is run (on MacOS), one can expect to see this within Terminal:
+When the code is run (on MacOS), one can expect to see output of the same format within Terminal:
 
 ```shell
 weights initial
@@ -24,5 +24,7 @@ results:
 1.0
 ```
 
-Note that several lines of code are commented out and if one wishes to see more information, it is easy to uncomment them out if they wish to view information like the value of the cost function, the value of the sigmoid function, etc. 
+Note that due to the fact that the weights are initialized with random values between 0 and 1, the exact values of weights from one training session to the next will vary. However, your values should still resemble the ones shown here. 
+
+Also note that several lines of code are commented out and if one wishes to see more information, it is easy to uncomment them out if they wish to view information like the value of the cost function, the value of the sigmoid function, etc. 
 
