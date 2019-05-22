@@ -61,7 +61,6 @@ public class SingleLayerNN {
 
 		for (double[] set : testset) {
 			neuron.setInput(set);
-			//System.out.println(neuron.sig(neuron.z(neuron.getInput(), neuron.getWeights())));
 			System.out.println(neuron.getPrediction());
 		}
 

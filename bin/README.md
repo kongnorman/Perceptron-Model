@@ -23,6 +23,3 @@ results:
 1.0
 1.0
 ```
-
-Note that several lines of code are commented out and if one wishes to see more information, it is easy to uncomment them out if they wish to view information like the prediction, etc. 
-

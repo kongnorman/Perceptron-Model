@@ -72,10 +72,6 @@ public class Perceptron {
 			double cost = Math.pow((pred - real[index]), 2);
 			double costPrime = 2*(pred - real[index]);
 
-			// Print cost
-			//if(i % 1000 == 0)
-			//	System.out.println(cost);
-
 			// first feature
 			gdescent[0] = input[0] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
 
