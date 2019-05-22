@@ -10,6 +10,4 @@ Here are the initial and final weights after training over 3000 iterations:
 | 0.007235169017341447      | -3.85138991715282      |
 | 0.7161322758522345 | -2.284306744452056     |
 
-Accuracy: 100%
-
-Results are discussed in depth in the "report" folder.
+Results are discussed in greater depth in the formal report, found in the report folder.
