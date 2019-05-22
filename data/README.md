@@ -11,6 +11,6 @@ Here are the initial and final weights after training over 3000 iterations:
 | 0.9775970199199433 | -2.471117294805991     |
 | 0.6573537687331596 | -1.6891918840393987 |
 
-When testing the testing set, you should expect an accuracy score of 100%.
+When testing the testing set, you can expect an accuracy score of 100%.
 
 Results are discussed in depth in the formal report.
