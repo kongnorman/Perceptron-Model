@@ -77,16 +77,16 @@ public class Perceptron {
 			//	System.out.println(cost);
 
 			// first feature
-			gdescent[0] = input[0] * sigPrime(z(input, weights)) * costPrime;
+			gdescent[0] = input[0] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
 
 			// second feature
-			gdescent[1] = input[1] * sigPrime(z(input, weights)) * costPrime;
+			gdescent[1] = input[1] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
 
 			// third feature
-			gdescent[2] = input[2] * sigPrime(z(input, weights)) * costPrime;
+			gdescent[2] = input[2] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
 
 			// fourth feature
-			gdescent[3] = input[3] * sigPrime(z(input, weights)) * costPrime;
+			gdescent[3] = input[3] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
 
 			for (int n=0; n<weights.length; n++) {
 				weights[n] -= gdescent[n]*lr;
