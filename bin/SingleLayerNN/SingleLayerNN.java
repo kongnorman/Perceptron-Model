@@ -35,7 +35,7 @@ public class SingleLayerNN {
 
 		// Training the perceptron over 3 epochs
 
-		// Epoch #1, iterates over all points in training set
+		// Epoch #1, for loop iterates over all points in training set
 		for (int i=0; i<trainset.length; i++) {
 			// Sets one point from training data as input
 			neuron.setInput(trainset[i]);
@@ -43,7 +43,7 @@ public class SingleLayerNN {
 			neuron.train(trainset[i], trainlabels, iterations, learningr, i);
 		}
 
-		// Epoch #2, iterates over all points in training set
+		// Epoch #2, for loop iterates over all points in training set
 		for (int i=0; i<trainset.length; i++) {
 			// Sets one point from training data as input
 			neuron.setInput(trainset[i]);
@@ -51,7 +51,7 @@ public class SingleLayerNN {
 			neuron.train(trainset[i], trainlabels, iterations, learningr, i);
 		}
 
-		// Epoch #3, iterates over all points in training set
+		// Epoch #3, for loop iterates over all points in training set
 		for (int i=0; i<trainset.length; i++) {
 			// Sets one point from training data as input
 			neuron.setInput(trainset[i]);
