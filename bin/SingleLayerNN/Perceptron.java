@@ -4,7 +4,6 @@ public class Perceptron {
 	double[] input;
 	double prediction;
 	double[] weights = new double[4];
-	double[] gdescent = new double[4];
 
 	// Constructor.
 	public Perceptron(double[] input) {
@@ -24,14 +23,16 @@ public class Perceptron {
 		return weights;
 	}
 
+	// Setter: input.
 	public void setInput(double[] arr) {
 		input = arr;
-	} // End setInput() method
+	} 
 
 	// Getter: prediction.
 	public double getPrediction() {
 		double[] w = getWeights();
 		double[] a = getInput();
+		// Rounding to get either a 0 or 1
 		if (sig(z(w, a)) < 0.5)
 			return 0.;
 		else
@@ -64,28 +65,36 @@ public class Perceptron {
 
 		for (int i=0; i<iterations; i++) {
 
-			// Feed-forward.
+			// Creating the gradient array
+			double[] gradient = new double[4];
+
+			// Feed-forward, getting prediction.
 			double z = z(input, weights);
 			double pred = sig(z);
 
 			// Back propogation.
+
+			// Calculating cost with cost function.
 			double cost = Math.pow((pred - real[index]), 2);
 			double costPrime = 2*(pred - real[index]);
 
+			// Computing gradient.
+
 			// first feature
-			gdescent[0] = input[0] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
+			gradient[0] = input[0] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
 
 			// second feature
-			gdescent[1] = input[1] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
+			gradient[1] = input[1] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
 
 			// third feature
-			gdescent[2] = input[2] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
+			gradient[2] = input[2] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
 
 			// fourth feature
-			gdescent[3] = input[3] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
+			gradient[3] = input[3] * Math.pow(sigPrime(z(input, weights)), 2) * costPrime;
 
+			// Subtracting the gradient components from the corresponding weights
 			for (int n=0; n<weights.length; n++) {
-				weights[n] -= gdescent[n]*lr;
+				weights[n] -= gradient[n]*lr;
 			}
 
 		} // End iterations loop
